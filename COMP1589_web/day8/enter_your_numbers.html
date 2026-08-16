@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<title>enteryournumbers</title>
+	</head>
+	<body>
+		<h1>Enter your numbers:</h1>
+		<form>
+			<input type="text" id="input_1">
+			<input type="text" id="input_2">
+			<input type="text" id="input_3">
+			<button type="button" id="button" onclick="add()">Add</button>
+			<input type="text" id="output">
+		</form>
+		<script>
+			function add(){
+				let output1 = 0;
+				let output2 = 0;
+				let output3 = 0;
+				let input1 = document.getElementById("input_1").value;
+				let input2 = document.getElementById("input_2").value;
+				let input3 = document.getElementById("input_3").value;
+				
+				// the great wall
+				if (input1.length === ""){
+					output1 = 0;
+				}
+				else {
+					output1 = Number(input1)
+				}
+				if (input2.length === ""){
+					output2 = 0;
+				}
+				else {
+					output2 = Number(input2)
+				}
+				if (input3.length === ""){
+					output3 = 0;
+				}
+				else {
+					output3 = Number(input3)
+				}
+				
+				let output = output1 + output2 + output3;
+				document.getElementById("output").value = output;
+			}
+		</script>
+	</body>
+</html>

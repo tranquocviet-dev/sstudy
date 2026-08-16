@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is the description of my website that will appear in search results">
+        <meta property="og:title" content="My Website Title">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://mywebsite.com">
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
+    <body>
+        <header>
+            <h1>My Website Header</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" aria-label="Link to Home Page">Home</a></li>
+                    <li><a href="#" aria-label="Link to About Page">About</a></li>
+                    <li><a href="#" aria-label="Link to Services Page">Services</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Welcome to my website</h2>
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+ 
+            <section style="background-color: black; color: white;">
+                <h3>My Section Header</h3>
+                <p>This is a section of content.</p>
+            </section>
+ 
+ 
+            <div itemscope itemtype="http://schema.org/Product">
+                <h1 itemprop="name">Product Name</h1>
+                <img itemprop="image" src="https://i.pinimg.com/736x/38/52/a0/3852a07d2f6828ca4c9d9547fac8bed3.jpg">
+                <p itemprop="description">Product Description</p>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <p itemprop="price">20.00</p>
+                    <p>
+                        <span itemprop="priceCurrency" content="GBP">GBP</span>
+                    </p>
+                </div>
+            </div>
+            
+ 
+            <form action="#" id="myform" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+ 
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+ 
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea><br><br>
+ 
+                <button onclick="document.getElementById('myform').submit()">Submit</button>
+            </form>
+        </main>
+ 
+        <footer>
+            <p style="font-size: 12px;">&copy; My Website 2021</p>
+        </footer>
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.com",
+            "@type": "WebPage",
+            "name": "My Website",
+            "description": "A website about XYZ",
+        }
+        </script>
+    </body>
+</html>

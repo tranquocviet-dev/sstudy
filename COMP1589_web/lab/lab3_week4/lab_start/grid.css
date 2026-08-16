@@ -1,0 +1,43 @@
+.content{
+  background-color: rgb(236, 237, 238);
+	margin: auto;
+	width: 980px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 'Header Header Header Header Header'
+  'Nav Main Main Main Aside'
+  'Footer Footer Footer Footer Footer';
+  grid-template-columns: 100px auto auto auto 200px;
+  grid-template-rows: 150px auto 120px;
+  grid-gap: 10px;
+  background-color:  #2196F3;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255,255,255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: left;
+  padding: 20px 20px;
+  font-size: 1em;
+}
+
+.grid-item1 {
+  grid-area: Header;
+}
+
+.grid-item2 {
+  grid-area: Nav;
+}
+
+.grid-item3 {
+  grid-area: Main;
+}
+
+.grid-item4 {
+  grid-area: Aside;
+}
+.grid-item5 {
+  grid-area: Footer;
+}

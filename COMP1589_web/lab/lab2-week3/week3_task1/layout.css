@@ -1,0 +1,38 @@
+body {
+	background-color: #ccc;
+	font-family: verdana, sans-serif;
+	font-size: 1em;
+	line-height: 1.4em;
+	margin: 0px;
+}
+
+#container {
+	background-color: #fff;
+	width: 800px;
+	margin: auto;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+img {
+	float: left;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+h1 {
+	font-size: 1.8em;
+	margin: 0px;
+	padding-top: 20px;
+}
+
+p {
+	color: #999;
+	width: 550px;
+	float: left;
+	column-count: 3;
+	column-gap: 20px;
+	column-rule: 1px solid #ddd;
+}

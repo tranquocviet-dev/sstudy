@@ -1,0 +1,44 @@
+* Task 1
+The task is to not use reverse() or split (using [::-1]) and
+print an arr backwards. For this we use the "for" function and
+loop the original arr backwards and add the value to the new arr.
+#+begin_src python :session main :results output
+num_list = [3, 6, 9, 12]
+def home_made_reverse(nlist):
+	newlist = []
+	for i in range(len(nlist) -1, -1, -1):
+		newlist.append(nlist[i])
+	return newlist
+
+modded_num_list = home_made_reverse(num_list)
+print(modded_num_list)
+#+end_src
+
+#+RESULTS:
+: [12, 9, 6, 3]
+
+* Task 2
+The task is to implement a sorting algorithm, which i implemented
+bubble sort.
+#+begin_src python :session main :results output
+def bubble_sort(arr, reverse=False):
+    n = len(arr)
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already sorted, no need to check them
+        for j in range(0, n-i-1):
+            if (arr[j] > arr[j+1]) != reverse:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+arr1 = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(arr1)
+print("Sorted array (ascending):", arr1)
+
+arr2 = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(arr2, reverse=True)
+print("Sorted array (descending):", arr2)
+#+end_src
+
+#+RESULTS:
+: Sorted array (ascending): [11, 12, 22, 25, 34, 64, 90]
+: Sorted array (descending): [90, 64, 34, 25, 22, 12, 11]

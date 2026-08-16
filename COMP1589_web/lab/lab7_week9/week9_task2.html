@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<title>Hello World</title>
+	</head>
+	<body>
+		<canvas id="sCanvas" width="800" height="800"></canvas>
+		<script>
+			let randomColour;
+			let randomSize;
+			let xPos;
+			let yPos;
+			let i;
+			let j;
+			const c = document.getElementById("sCanvas");
+			const ctx = c.getContext("2d");
+			
+			function drawFilledCircle(size,xPos,yPos,colour){
+				ctx.beginPath();
+				ctx.arc(xPos,yPos,size,0,2*Math.PI);
+				ctx.fillStyle = colour;
+				ctx.fill();
+			}
+			
+			function drawSplatter(size,xPos,yPos,colour){
+				for(j=0;j<10;j++){
+					let splatSize = size / Math.round(Math.random()*30);
+					drawFilledCircle(splatSize,xPos + Math.round(Math.random()*50),yPos + Math.round(Math.random()*50),colour);
+				}
+			}
+			for (let i = 0; i < Math.round(Math.random()*20); i++){
+				randomSize = Math.round(Math.random()*50);
+				xPos = Math.round(Math.random()*550);
+				yPos = Math.round(Math.random()*400);
+				randomColour = '#' + Math.random().toString(16).substring(2,8);
+				drawFilledCircle(randomSize, xPos, yPos, randomColour);
+				drawSplatter(randomSize, xPos, yPos, randomColour);
+			}
+		</script>
+	</body>
+</html>

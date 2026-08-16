@@ -1,0 +1,14 @@
+* Risk control
+- Risk prevents one from the goal, creating possibility of loss
+- Risk Management: 3 step
+  - Identify
+  - Assessment
+  - Control
+- Asset: valuable things
+  - Priotized based on value
+- Risk Control Strategies
+  - Defense
+  - Transference
+  - Mitigation
+  - Acceptance
+  - Termination

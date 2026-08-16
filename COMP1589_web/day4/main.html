@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="widthwidth=device-width, inital-scale=1">
+		<title>Hello World</title>
+	</head>
+	<body>
+		<form id='form' action='' method='POST' name='my_form' onsubmit="return checkForm()">
+			<label for='form'>form</label>
+			<div>
+				<label for='text'>text</label>
+				<input id='text' type='text' placeholder='text' name='text'>
+			</div>
+			<div>
+				<label for='url'>url</label>
+				<input id='url' type='url' placeholder='url' name='url'>
+			</div>
+			<div>
+				<label for='number'>number</label>
+				<input id='number' type='number' placeholder='number' name='number'>
+			</div>
+			<div>
+				<label for='radio'>radio</label>
+				<input id='radio' type='radio' name='radio'>
+				<input id='radio' type='radio' name='radio'>
+			</div>
+			<div>
+				<label for='email'>email</label>
+				<input id='email' type='email' placeholder='email' name='email'>
+			</div>
+			<div>
+				<label for='password'>password</label>
+				<input id='password' type='password' placeholder='password' name='password'>
+			</div>
+			<div>
+				<label for='checkbox'>checkbox</label>
+				<input id='checkbox' type='checkbox' placeholder='checkbox' name='checkbox'>
+			</div>
+			<div>
+				<label for='select'>select</label>
+				<select id='select' name="select">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<button type="submit">Submit Form</button>
+		</form>
+		<script>
+			function checkForm() { alert('checked') }
+			document.forms['my_form'].addEventListener('submit', (event) => {
+				// Here we prevent the default action of the event, in this case form submitting
+				event.preventDefault()
+				alert('form submitted')
+				})
+				const form = document.forms['my_form']
+				
+				form.addEventListener('submit', (event) => {
+					event.preventDefault()
+					
+					// Load the data into the FormData class
+					const FD = new FormData(form)
+					
+					// Check that the field is not just a blank string
+					if (FD.get('field_name') == '') {
+						// Display an error message under the form if it is - there are better ways to do this, do you see why?
+						form.append('This field is required')
+						
+						// Exit the function, this stops the rest of the code running after this point
+						return
+					}
+					
+					// Check if the user has accepted our terms & conditions, i.e. they have clicked the checkbox input element
+					// We are checking if this has a value, if it doesn't then the user hasn't checked the box
+					if (!FD.get('checkbox_input_field')) {
+						alert ('terms & conditions must be accepted')
+						return
+					}
+					})
+		</script>
+	</body>
+</html>

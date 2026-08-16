@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<title>Choices matter</title>
+		<style>
+			header {
+				display: flex;
+				justify-content: center;
+				align: center;
+				font-size: 24px;
+			}
+			#display {
+				width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>What will you choose in life?</header>
+		<form>
+			<label for='Health'>Health</label>
+			<input type="checkbox" id="Health" name="pierce">
+			<label for='Wealth'>Wealth</label>
+			<input type="checkbox" id="Wealth" name="pierce">
+			<label for='Happiness'>Happiness</label>
+			<input type="checkbox" id="Happiness" name="pierce">
+			<div>
+				<input type="text" id="display">
+			</div>
+			<button type="button" onclick="Choose()">Button</button>
+		</form>
+		<p>
+		</p>
+		<script>
+			let message = "";
+			function Choose() {
+				var selected = [];
+				var checked = document.querySelectorAll('input[name=pierce]:checked');
+				checked.forEach (function (box) {
+					selected.push(box.id)
+					});
+					if (selected.length == 3) {
+						message = "You have selected " + selected[0] + ", " + selected[1] + " and " + selected[2];
+						} else if (selected.length == 2) {
+							message = "You have selected " + selected[0] + " and " + selected[1];
+							} else {
+								message = "You have selected " + selected[0];
+							}
+							document.getElementById("display").value = message;
+						}
+		</script>
+	</body>
+</html>

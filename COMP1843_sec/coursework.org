@@ -1,0 +1,8 @@
+* Scenario:
+- Digital platform for managing patient appointment, records, etc
+- The system is facing many different problems:
+  - Reliant on third party
+  - Lacking raw server power
+- Your task is to do a *Risk Identification*
+* Specification:
+- 

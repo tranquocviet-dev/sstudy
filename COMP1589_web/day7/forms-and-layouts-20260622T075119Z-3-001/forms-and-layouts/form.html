@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Layout Types</title>
+
+    <style>
+        /* Copied from https://www.cssfontstack.com/Helvetica */
+        h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+        h2 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+        p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; margin: 0; }
+
+        label p {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-bottom: 3px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            border: #999 2px solid;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #666;
+            padding: 5px 15px;
+            line-height: 1;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        form {
+            gap: 10px;
+
+            /** Update these values */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .row {
+            /** Update these values */
+            gap: 10px;
+            display: flex;
+        }
+
+        .row--single {
+            grid-column: 1 / span 2;
+        }
+
+        .row--apart {
+            /** Update these values */
+            justify-content: space-between;
+        }
+
+        button,
+        input[type="reset"] {
+            padding: 10px 15px;
+            line-height: 1;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #3699e8;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+    <body style="background: #eee; display: flex; align-items: center; height: 100vh; margin: 0;">
+        <main style="margin: 0 auto; max-width: 1200px; background: #fff; border-radius: 15px;">
+            <div style="background: #fff; padding: 10px 20px; border-radius: 5px; max-width: 600px">
+                <h1>Contact Form</h1>
+
+                <form id="my_form" method="post" action="#">
+                    <div class="row">
+                        <label>
+                            <p>Name</p>
+                            <input required type="text" name="name" placeholder="John Smith">
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            <p>Email</p>
+                            <input required type="email" name="email" placeholder="john@msmith.com">
+                        </label>
+                    </div>
+                    <div class="row row--single">
+                        <div>
+                            <label>
+                                <p>Height (Feet)</p>
+                                <input required type="number" name="height_ft" placeholder="e.g. 5">
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <p>Height (Inches)</p>
+                                <input required type="number" name="height_inch" placeholder="e.g. 2">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row row--single row--apart">
+                        <input type="reset">
+                        <button type="submit">Send Data</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <script>
+            window.addEventListener('load', () => {
+                const processForm = (FD) => {
+                    const XHR = new XMLHttpRequest();
+
+                    // Define what happens on successful data submission
+                    XHR.addEventListener('load', (event) => {
+                        console.info('Yeah! Data sent and response loaded.');
+                    });
+
+                    // Define what happens in case of an error
+                    XHR.addEventListener('error', (event) => {
+                        console.error('Oops! Something went wrong.');
+                    });
+
+                    // Set up our request
+                    XHR.open('POST', 'https://greenwichser.free.beeceptor.com');
+
+                    // Send our FormData object; HTTP headers are set automatically
+                    XHR.send(FD);
+                }
+                
+                const form = document.getElementById('my_form')
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault()
+
+                    console.log('Form submitted')
+
+                    processForm(new FormData(form))
+                });
+            })
+        </script>
+    </body>
+</html>

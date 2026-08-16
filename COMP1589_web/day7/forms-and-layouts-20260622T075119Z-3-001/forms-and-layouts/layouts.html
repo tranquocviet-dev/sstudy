@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Layout Types</title>
+
+    <style>
+        /* Copied from https://www.cssfontstack.com/Helvetica */
+        h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+        h2 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+        p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+
+        .example {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .example > div {
+            padding: 10px;
+            border-radius: 5px;
+            background: #595959;
+            margin-bottom: 15px;
+        }
+
+        .example > div:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .example > div * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .example_block {
+            background: lightgreen;
+            text-align: center;
+            color: #000;
+            padding: 3px 7px !important;
+            border-radius: 5px;
+        }
+
+        .example_block--large {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+    <body style="background: #eee;">
+        <main style="margin: 0 auto; max-width: 1200px; padding: 30px; background: #fff; border-radius: 15px;">
+            <div style="margin-bottom: 30px; background: #eee; padding: 10px 20px; border-radius: 5px;">
+                <h1>Layout Types</h1>
+                <p>In the code below you will find a variety of approaches to create layouts using CSS and HTML, there is no "correct" approach but there are best practices for certain scenarios.</p>
+                <p>Be sure to use element inspector (right click, inspect) to see how these different layouts are interpreted by the browser</p>
+                <p>You can learn more at <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction#normal_flow" target="_blank">mdn web docs</a></p>
+            </div>
+
+            <div>
+                <h2>Default</h2>
+                <p>By default the browser will stack "block" elements, as you can see below the elements appear in the browser stacked in the same order as they are in your code</p>
+
+                <div class="example">
+                    <div>
+                        <div>Block Element 1</div>
+                        <p>Block Element 2, stacks underneath</p>
+
+                        <hr style="margin:10px 0" />
+
+                        <div class="example_block">First</div>
+                        <div class="example_block">Second</div>
+                        <div class="example_block">Third</div>
+                    </div>
+                    <div>
+                        <span>Inline Element 1</span>
+                        <strong>Inline Element 2, stacks inline with the inline element before</strong>
+
+                        <hr style="margin:10px 0" />
+
+                        <span class="example_block">First</span>
+                        <span class="example_block">Second</span>
+                        <span class="example_block">Third</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0;" />
+
+            <div>
+                <h2>Flexbox</h2>
+                <p>Shorthand for Flexible Box gives us an easy way to layout elements as rows or columns - unlike using inline elements, this gives us much more granular control using CSS</p>
+                <p>Flex is very powerful but also complex, you can learn more about it at <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank">mdn web docs</a></p>
+                <p>Play around with the code below and see what you can do, try seeing how you can reverse the order of elements using flex</p>
+
+                <div class="example">
+                    <p>Elements with flex applied</p>
+                    <div style="display: flex;">
+                        <div class="example_block">First</div>
+                        <div class="example_block">Second</div>
+                        <div class="example_block">Third</div>
+                    </div>
+
+                    <p>Elements with flex applied and spacing using gap</p>
+                    <div style="display: flex; gap: 15px">
+                        <div class="example_block">First</div>
+                        <div class="example_block">Second</div>
+                        <div class="example_block">Third</div>
+                    </div>
+
+                    <p>Elements with flex applied, with a gap and set to columns (default is row)</p>
+                    <div style="display: flex; gap: 15px; flex-direction: column;">
+                        <div class="example_block">First</div>
+                        <div class="example_block">Second</div>
+                        <div class="example_block">Third</div>
+                    </div>
+
+                    <p>Elements with flex applied, with a gap and centre alignment</p>
+                    <div style="display: flex; gap: 15px; align-items: center;">
+                        <div class="example_block example_block--large">First</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Second</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Third</div>
+                        <div class="example_block example_block--large">Fourth</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Fifth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Sixth</div>
+                        <div class="example_block example_block--large">Seventh</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Eighth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Ninth</div>
+                    </div>
+
+                    <p>Elements with flex applied, with a gap, bottom alignment and wrapping</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-end;">
+                        <div class="example_block example_block--large">First</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Second</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Third</div>
+                        <div class="example_block example_block--large">Fourth</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Fifth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Sixth</div>
+                        <div class="example_block example_block--large">Seventh</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Eighth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Ninth</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0;" />
+
+            <div>
+                <h2>Grid</h2>
+                <p>Flexbox works in either columns or rows, CSS grid works in both giving us more control over both aspects at the same time.</p>
+                <p>Grids are great with lots more features to learn about at <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids" target="_blank">mdn web docs</a></p>
+                <p>Play around with the code below and see what you can do</p>
+
+                <div class="example">
+                    <p>Elements with grid applied</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="example_block">First</div>
+                        <div class="example_block">Second</div>
+                        <div class="example_block">Third</div>
+                    </div>
+
+                    <p>Elements with grid applied and spacing using gap</p>
+                    <div style="display: grid; gap: 15px; grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="example_block">First</div>
+                        <div class="example_block">Second</div>
+                        <div class="example_block">Third</div>
+                    </div>
+
+                    <p>Elements with grid applied, with a gap and demonstrating wrapping</p>
+                    <div style="display: grid; gap: 15px; grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="example_block example_block--large">First</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Second</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Third</div>
+                        <div class="example_block example_block--large">Fourth</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Fifth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Sixth</div>
+                        <div class="example_block example_block--large">Seventh</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Eighth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Ninth</div>
+                    </div>
+
+                    <p>Elements with grid applied, with a gap and alignment</p>
+                    <div style="display: grid; gap: 15px; grid-template-columns: repeat(3, 1fr); align-items: center; justify-items: center; ">
+                        <div class="example_block example_block--large">First</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Second</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Third</div>
+                        <div class="example_block example_block--large">Fourth</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Fifth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Sixth</div>
+                        <div class="example_block example_block--large">Seventh</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Eighth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Ninth</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0;" />
+
+            <div>
+                <h2>Floats</h2>
+                <p>Floating an element removes it from the usual flow of the page structure, this can be very powerful but also damaging - we don't tend to use floats as often now as we have access to the more powerful flex and grid systems.</p>
+                <p>You can learn more about them at <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats" target="_blank">mdn web docs</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods" target="_blank">mdn web docs - legacy layouts</a></p>
+                <p>Play around with the code below and see what you can do</p>
+
+                <div class="example">
+                    <p>First element floated left</p>
+                    <div>
+                        <div class="example_block" style="float:left;">First</div>
+                        <div class="example_block">Second</div>
+
+                        <div style="clear: both;"></div>
+                    </div>
+
+                    <p>First element floated right</p>
+                    <div>
+                        <div class="example_block" style="float:right;">First</div>
+                        <div class="example_block">Second</div>
+
+                        <div style="clear: both;"></div>
+                    </div>
+
+                    <p>Elements floated without "clear" fix</p>
+                    <div>
+                        <div class="example_block" style="float:left;">First</div>
+                        <div class="example_block" style="float:right;">Second</div>
+                    </div>
+
+                    <p>Both elements floated with clear fix in opposing directions</p>
+                    <div>
+                        <div class="example_block" style="float:left;">First</div>
+                        <div class="example_block" style="float:right;">Second</div>
+
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0;" />
+
+            <div>
+                <h2>Table</h2>
+                <p>Tables are powerful when used to display tabular data, in legacy periods tables were used to layout whole websites and are still very common place in HTML emails. Unlike the previous layout systems, table layouts are created entirely in HTML and not CSS - however we can apply it via CSS to mimic the HTML markup if we wish.</p>
+                <p>Tables are great, but with limitations, we tend to use grids or other layouts now, due to it's legacy use as a layout system it is no longer covered by mdn web docs.</p>
+                <p>Play around with the code below and see what you can do</p>
+
+                <div class="example">
+                    <p>HTML Table Layout</p>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="example_block">First</div>
+                                </td>
+                                <td>
+                                    <div class="example_block">Second</div>
+                                </td>
+                                <td>
+                                    <div class="example_block">Third</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>CSS Table Layout</p>
+                    <div>
+                        <div style="display: table;">
+                            <div style="display: table-row;">
+                                <div style="display: table-cell;">
+                                    <div class="example_block">First</div>
+                                </div>
+                                <div style="display: table-cell;">
+                                    <div class="example_block">Second</div>
+                                </div>
+                                <div style="display: table-cell;">
+                                    <div class="example_block">Third</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0;" />
+
+            <div>
+                <h2>Columns</h2>
+                <p>If we wish to mimic a newspaper style layout with columns we can use the simple built in column system, this tends to not be suitable for most cases over other layout systems due to the lack of control we have over the content.</p>
+                <p>Play around with the code below and see what you can do</p>
+
+                <div class="example">
+                    <p>Elements split into columns by fixed width</p>
+                    <div style="column-width: 200px;">
+                        <div class="example_block example_block--large">First</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Second</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Third</div>
+                        <div class="example_block example_block--large">Fourth</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Fifth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Sixth</div>
+                        <div class="example_block example_block--large">Seventh</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Eighth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Ninth</div>
+                    </div>
+
+                    <p>Elements split into columns by count</p>
+                    <div style="column-count: 3;">
+                        <div class="example_block example_block--large">First</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Second</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Third</div>
+                        <div class="example_block example_block--large">Fourth</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Fifth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Sixth</div>
+                        <div class="example_block example_block--large">Seventh</div>
+                        <div class="example_block example_block--large" style="height: 100px;">Eighth</div>
+                        <div class="example_block example_block--large" style="height: 300px;">Ninth</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

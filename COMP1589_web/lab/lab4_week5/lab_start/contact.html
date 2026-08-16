@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="grid.css">
+	</head>
+	<body>
+		<div class="content">
+			<div class="grid-container">
+				<div class="grid-item1"><h1>Contact</h1></div>
+				<div class="grid-item2">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a class="active" href="contact.html">Contact</a></li>
+						<li><a href="about.html">About</a></li>
+					</ul>
+				</div>
+				<div class="grid-item3">
+					<form>
+						<fieldset>
+							<legend>Your Details:</legend>
+							<div>
+								<label for="name">Name:</label><br>
+								<input type="text" id="name" name="name"><br>
+								<label for="femail">Email:</label><br>
+								<input type="email" id="femail" name="femail"><br>
+								<label for="password">Password:</label><br>
+								<input type="password" id="password" name="password"><br>
+							</div>
+							<div>
+								<span contenteditable="true"></span>
+								<label for="comments">Comments:</label><br>
+								<input type="text" id="comments" name="comments"><br>
+							</div>
+							<div>
+								<label for="hear">How did you hear about us?</label><br>
+								<select id="hear" name="How did you hear about us?">
+									<option value="Google">Google</option>
+									<option value="Facebook">Facebook</option>
+									<option value="Instagram">Instagram</option>
+								</select><br>
+								<label for="comeback">Would you visit again?</label><br>
+								<label>
+									<input id="yes" type="radio" name="comeback" value="Yes">
+									Yes
+								</label>
+								<label>
+									<input id="no" type="radio" name="comeback" value="No">
+									No
+								</label><br>
+							</div>
+							<div>
+								<label for="updates">Sign me up for email updates!</label>
+								<input type="checkbox" id="updates" name="updates" value="yes"><br>
+								<input type="reset" value="Reset">
+								<input type="submit" value="Submit">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="grid-item4">Aside</div>
+				<div class="grid-item5">Footer</div>
+			</div>
+		</div>
+	</body>
+</html>

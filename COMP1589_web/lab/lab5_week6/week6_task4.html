@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<title>Hello World</title>
+	</head>
+	<body>
+		<form>
+			<label for='text'>Enter farhenheit</label>
+			<input id='farenheit' type='number' placeholder='number goes here' name='text'>
+			<button type="button" onclick="calculate_numbers()">Convert</button>
+		</form>
+		The temperature in Celsius is <span id="celcius"></span>
+		<script>
+			function calculate_numbers(){
+				var farenheit = document.getElementById("farenheit").value;
+				var calced = (farenheit - 32) * 5 / 9;
+				document.getElementById("celcius").innerHTML = calced.toFixed(2);
+			}
+		</script>
+	</body>
+</html>
