@@ -1,0 +1,26 @@
+# Fdb version 4
+["pdflatex"] 1786963697.49049 "main.tex" "main.pdf" "main" 1786963697.56741 2
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/fonts/map/fontname/texfonts.map" 1 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/public/cm/cmr10.tfm" 1 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/base/article.cls" 1 20144 b966087dda3b194755eb460d32e2ef75 ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/base/fontenc.sty" 1 5275 6f9d359641b36842524cdb97716ab75f ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/base/inputenc.sty" 1 5048 0270515b828149155424600fd2d58ac5 ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/base/size11.clo" 1 8464 f339f4d5391fbe0425b2d94c90e6819e ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/graphics-cfg/graphics.cfg" 1 1224 978390e9c2234eab29404bc21b268d1e ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/graphics-def/pdftex.def" 1 19626 23e2822b9b2b5005f4c549ca98b9334d ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/graphics/graphics.sty" 1 18363 69bb4f5538964bfea50d1e6d89cbe69f ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/graphics/graphicx.sty" 1 8118 43b99e52946c33a23f5f43b52d5cc5ec ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/graphics/keyval.sty" 1 2671 d9941f4bf4750e9b0603c9a2ec54693b ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/graphics/trig.sty" 1 4023 e66acf578d6b564c4670fb57ff336a7a ""
+  "/nix/store/dvanhd4pgax4pklxqng1bmfwi2j76nig-texlive-2025-r78234-final-env-texmfdist/tex/latex/tools/longtable.sty" 1 16014 dfa4b4d4e04a78a3f05a90c19711737a ""
+  "/nix/store/gdaagy0yi29hvb17s73r16699kq61l4r-texlive-2025-r78234-final-env/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1 3438318 38f7349b8624eb74e029e32c6a0b3e04 ""
+  "/nix/store/gdaagy0yi29hvb17s73r16699kq61l4r-texlive-2025-r78234-final-env/share/texmf-var/web2c/texmf.cnf" 1 44263 9c1b638d786ee48e4e88e69df4cb07af ""
+  "main.aux" 1786963472.65116 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.tex" 1786963697.38715 2006 6f29f80bfc9ce7d4f689c94b8dc5e63c ""
+  "wrapfig.sty" 0 -1 0 ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.pdf"
+  (rewritten before read)

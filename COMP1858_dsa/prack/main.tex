@@ -1,8 +1,37 @@
-* Task 1
+% Created 2026-08-17 Mon 17:48
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{user}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={user},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.2 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Task 1}
+\label{sec:org4ec4dce}
 The task is to not use reverse() or split (using [::-1]) and
 print an arr backwards. For this we use the "for" function and
 loop the original arr backwards and add the value to the new arr.
-#+begin_src python :session main :results output :exports both
+\begin{verbatim}
 num_list = [3, 6, 9, 12]
 def home_made_reverse(nlist):
 	newlist = []
@@ -12,15 +41,18 @@ def home_made_reverse(nlist):
 
 modded_num_list = home_made_reverse(num_list)
 print(modded_num_list)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-: [12, 9, 6, 3]
-
-* Task 2
+\phantomsection
+\label{orgc234817}
+\begin{verbatim}
+[12, 9, 6, 3]
+\end{verbatim}
+\section{Task 2}
+\label{sec:org99a7742}
 The task is to implement a sorting algorithm, which i implemented
 bubble sort.
-#+begin_src python :session main :results output :exports both
+\begin{verbatim}
 def bubble_sort(arr, reverse=False):
     n = len(arr)
     # Traverse through all array elements
@@ -37,8 +69,12 @@ print("Sorted array (ascending):", arr1)
 arr2 = [64, 34, 25, 12, 22, 11, 90]
 bubble_sort(arr2, reverse=True)
 print("Sorted array (descending):", arr2)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-: Sorted array (ascending): [11, 12, 22, 25, 34, 64, 90]
-: Sorted array (descending): [90, 64, 34, 25, 22, 12, 11]
+\phantomsection
+\label{org27ffc41}
+\begin{verbatim}
+Sorted array (ascending): [11, 12, 22, 25, 34, 64, 90]
+Sorted array (descending): [90, 64, 34, 25, 22, 12, 11]
+\end{verbatim}
+\end{document}
